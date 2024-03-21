@@ -1,5 +1,5 @@
 import {Client,Account,ID} from 'appwrite'
-import conf from '../conf/conf'
+import conf from '../conf/conf/'
 export class AuthService{
     client = new Client()
     account;
@@ -43,9 +43,9 @@ export class AuthService{
     }
 
 
-    async loggOut(){
+    async logOut(){
         try {
-                await this.account.deleteSessions()
+            await this.account.deleteSessions()
         } catch (error) {
             throw error
         }
