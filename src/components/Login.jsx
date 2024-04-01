@@ -27,7 +27,31 @@ function Login() {
         }
     }
   return (
-    <div>Login</div>
+    <div>
+        {error && <p>{error}</p>}
+  
+        <link rel="stylesheet" to="/signup" />
+        <form onSubmit={handleSubmit(login)}>
+
+            <Input 
+                label = 'email'
+                placeholder = 'enter email'
+                type = 'email'
+                {...register('email',{
+                    required : true
+                })}
+            />
+            <Input 
+                label = 'password'
+                placeholder = 'enter password'
+                type = 'password'
+                {...register('password',{
+                    required : true
+                })}
+            />
+            <Button type='submit'>Sign in</Button>
+        </form>
+    </div>
   )
 }
 
