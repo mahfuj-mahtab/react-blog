@@ -30,7 +30,18 @@ function PostForm({post}) {
             }
         }
         else{
-            
+            const file = data.image[0]? service.uploadFile(data.image[0]) : null
+            if(file){
+                const fileId = file.$id 
+                data.featuredImage = fileId
+                const dbPost  = await service.createPost({
+                    ...data,
+                    userId : userData.$id
+                })
+                if(dbPost){
+                    navigate(`/post/${dbPost.$id}`)
+                }
+            }
         }
     }
   return (
