@@ -49,7 +49,7 @@ function Login() {
                     required : true
                 })}
             />
-            <Button type='submit'>Sign in</Button>
+            <button type='submit'>Sign in</button>
         </form>
     </div>
   )

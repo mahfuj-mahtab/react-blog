@@ -57,7 +57,7 @@ function Signup() {
                     required : true
                 })}
             />
-            <Button type='submit'>Sign Up</Button>
+            <button type='submit'>Sign Up</button>
         </form>
 
     </div>
