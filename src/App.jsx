@@ -10,14 +10,17 @@ function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
   useEffect(() => {
+    
     authService.getCurrentUser().then((userData)=>{
       if(userData){
+        console.log(userData);
         dispatch(login({userData}))
       }else{
         dispatch(logOut())
       }
     }).finally(()=>{
       setLoading(false)
+      
     })
   }, [])
   

@@ -3,7 +3,7 @@ import { Form } from 'react-router-dom'
 import {Input,Select,RTE} from '../index'
 import service from '../../appwrite/config'
 import { useNavigate } from 'react-router-dom'
-import { UseSelector, useSelector } from 'react-redux'
+import {useSelector } from 'react-redux'
 function PostForm({post}) {
     const {register,handleSubmit,watch,setValue,control,getValue} = useForm({
         defaultValues : {

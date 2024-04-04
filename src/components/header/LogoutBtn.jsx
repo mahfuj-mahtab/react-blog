@@ -10,7 +10,7 @@ function LogoutBtn() {
         }).catch()
     }
   return (
-    <Button>Log out</Button>
+    <button onClick={logoutHandler}>Log out</button>
   )
 }
 
