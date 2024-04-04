@@ -6,17 +6,17 @@ import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import {login,logOut} from './store/authSlice'
 import { Header,Footer } from './components'
+import { Outlet } from 'react-router-dom'
 function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
   useEffect(() => {
-    
     authService.getCurrentUser().then((userData)=>{
       if(userData){
-        console.log(userData);
         dispatch(login({userData}))
       }else{
         dispatch(logOut())
+        console.log(userData);
       }
     }).finally(()=>{
       setLoading(false)
@@ -28,7 +28,7 @@ function App() {
     <>
     <Header />
     <main>
-      
+      <Outlet/>
     </main>
     <Footer />
     </>

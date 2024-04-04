@@ -11,12 +11,14 @@ function Login() {
     const {register,handleSubmit} = useForm()
     const [error,setError] = useState('')
     const login = async(data)=>{
+        // console.log(data);
         setError('')
         try {
             const session = await authService.login(data)
             if(session){
                 const userData = await authService.getCurrentUser()
                 if(userData){
+                    console.log('i am here');
                     dispatch(login(userData))
                     navigate("/")
                 }
@@ -29,7 +31,6 @@ function Login() {
     <div>
         {error && <p>{error}</p>}
   
-        <link rel="stylesheet" to="/signup" />
         <form onSubmit={handleSubmit(login)}>
 
             <Input 
